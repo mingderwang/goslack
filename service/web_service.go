@@ -23,43 +23,43 @@ type Config struct {
 	Url        string
 }
 
-type SlackService struct {
+type _mingderwang_Service struct {
 }
 
-func (s *SlackService) getDb(cfg Config) (gorm.DB, error) {
+func (s *_mingderwang_Service) getDb(cfg Config) (gorm.DB, error) {
 	db, err := gorm.Open("sqlite3", "/tmp/"+cfg.DbName)
 	//db.LogMode(true)
 	return db, err
 }
 
-func (s *SlackService) Migrate(cfg Config) error {
+func (s *_mingderwang_Service) Migrate(cfg Config) error {
 	db, err := s.getDb(cfg)
 	if err != nil {
 		return err
 	}
 	db.SingularTable(true)
 
-	db.AutoMigrate(&Slack{})
+	db.AutoMigrate(&_mingderwang_{})
 	return nil
 }
-func (s *SlackService) Run(cfg Config) error {
+func (s *_mingderwang_Service) Run(cfg Config) error {
 	db, err := s.getDb(cfg)
 	if err != nil {
 		return err
 	}
 	db.SingularTable(true)
 
-	slackResource := &SlackResource{db: db}
+	slackResource := &_mingderwang_Resource{db: db}
 
 	r := gin.Default()
 	//gin.SetMode(gin.ReleaseMode)
 
-	r.GET("/slack_message", slackResource.GetAllSlacks)
-	r.GET("/slack_message/:id", slackResource.GetSlack)
-	r.POST("/slack_message", slackResource.CreateSlack)
-	r.PUT("/slack_message/:id", slackResource.UpdateSlack)
-	r.PATCH("/slack_message/:id", slackResource.PatchSlack)
-	r.DELETE("/slack_message/:id", slackResource.DeleteSlack)
+	r.GET("/_mingderwang_", slackResource.GetAll_mingderwang_s)
+	r.GET("/_mingderwang_/:id", slackResource.Get_mingderwang_)
+	r.POST("/_mingderwang_", slackResource.Create_mingderwang_)
+	r.PUT("/_mingderwang_/:id", slackResource.Update_mingderwang_)
+	r.PATCH("/_mingderwang_/:id", slackResource.Patch_mingderwang_)
+	r.DELETE("/_mingderwang_/:id", slackResource.Delete_mingderwang_)
 
 	r.Run(cfg.SvcHost)
 
