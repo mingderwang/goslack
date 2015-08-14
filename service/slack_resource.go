@@ -1,5 +1,7 @@
 package service
 
+//go:generate awk -f replace.awk $GOFILE
+
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"

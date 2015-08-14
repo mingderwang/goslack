@@ -7,6 +7,8 @@
 // @LicenseUrl http://yvasiyarov.com/
 package service
 
+//go:generate awk -f replace.awk $GOFILE
+
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
@@ -54,12 +56,12 @@ func (s *_mingderwang_Service) Run(cfg Config) error {
 	r := gin.Default()
 	//gin.SetMode(gin.ReleaseMode)
 
-	r.GET("/_mingderwang_", slackResource.GetAll_mingderwang_s)
-	r.GET("/_mingderwang_/:id", slackResource.Get_mingderwang_)
-	r.POST("/_mingderwang_", slackResource.Create_mingderwang_)
-	r.PUT("/_mingderwang_/:id", slackResource.Update_mingderwang_)
-	r.PATCH("/_mingderwang_/:id", slackResource.Patch_mingderwang_)
-	r.DELETE("/_mingderwang_/:id", slackResource.Delete_mingderwang_)
+	r.GET("/_log4analytics_", slackResource.GetAll_mingderwang_s)
+	r.GET("/_log4analytics_/:id", slackResource.Get_mingderwang_)
+	r.POST("/_log4analytics_", slackResource.Create_mingderwang_)
+	r.PUT("/_log4analytics_/:id", slackResource.Update_mingderwang_)
+	r.PATCH("/_log4analytics_/:id", slackResource.Patch_mingderwang_)
+	r.DELETE("/_log4analytics_/:id", slackResource.Delete_mingderwang_)
 
 	r.Run(cfg.SvcHost)
 
