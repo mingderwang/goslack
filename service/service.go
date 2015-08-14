@@ -19,8 +19,8 @@ type Config struct {
 	DbPassword string
 	DbHost     string
 	DbName     string
-	SlackToken string
-	SlackUrl   string
+	Token      string
+	Url        string
 }
 
 type SlackService struct {
