@@ -1,3 +1,4 @@
+//go:generate ginger $GOFILE
 package service
 
 type SlackTopic struct {
@@ -92,6 +93,7 @@ type SlackAttachment struct {
 	ThumbURL    string       `json:"thumb_url,omitempty"`
 }
 
+// @ginger
 type Slack struct {
 	Id          int32  `json:"id"`
 	Created     int32  `json:"created"`
