@@ -1,0 +1,2 @@
+1. main.go should be generate from go generate too.
+2. Status should remove.

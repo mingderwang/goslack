@@ -42,9 +42,9 @@ type SlackIm struct {
 }
 
 type SlackMessages struct {
-	Ok       bool    `json:"ok"`
-	Messages []Slack `json:"messages"`
-	Has_more bool    `json:"has_more"`
+	Ok       bool            `json:"ok"`
+	Messages []Slack_message `json:"messages"`
+	Has_more bool            `json:"has_more"`
 }
 
 /*
@@ -94,7 +94,7 @@ type SlackAttachment struct {
 }
 
 // @ginger
-type Slack struct {
+type Slack_message struct {
 	Id          int32  `json:"id"`
 	Created     int32  `json:"created"`
 	Status      string `json:"status"`
@@ -117,7 +117,7 @@ type Slack struct {
 }
 
 const (
-	SlackStatus string = "todo"
-	DoingStatus string = "doing"
-	DoneStatus  string = "done"
+	Slack_messageStatus string = "todo"
+	DoingStatus         string = "doing"
+	DoneStatus          string = "done"
 )

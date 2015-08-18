@@ -45,9 +45,9 @@ func init() {
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "go2"
+	app.Name = "goslack"
 	app.Usage = "start a micro service"
-	app.Version = "0.0.2"
+	app.Version = "0.0.3"
 
 	app.Flags = []cli.Flag{
 		//	cli.StringFlag{"host", "http://localhost:8080", "use sevice host", "APP_HOST"},
@@ -69,7 +69,7 @@ func main() {
 					}).Fatal("getConfig return error")
 					return
 				}
-				svc := service.SlackService{}
+				svc := service.Slack_messageService{}
 
 				if err = svc.Run(cfg); err != nil {
 					log.Fatal(err)
@@ -87,7 +87,7 @@ func main() {
 					return
 				}
 
-				svc := service.SlackService{}
+				svc := service.Slack_messageService{}
 
 				if err = svc.Migrate(cfg); err != nil {
 					log.Fatal(err)
