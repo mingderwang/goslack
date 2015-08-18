@@ -3,3 +3,4 @@
 
 known bugs:
 1. not support NULL in json, (JSON-to-GO) will convert it to interface{}
+2. not support time.Time in json.
