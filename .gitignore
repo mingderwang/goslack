@@ -1,3 +1,4 @@
 goslack
-service/slack_resource.go
-service/web_service.go
+*_resource.go
+web_service.go
+main.go

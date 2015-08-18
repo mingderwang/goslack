@@ -1,2 +1,5 @@
 1. main.go should be generate from go generate too.
 2. Status should remove.
+
+known bugs:
+1. not support NULL in json, (JSON-to-GO) will convert it to interface{}
