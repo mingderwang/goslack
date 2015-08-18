@@ -1,5 +1,6 @@
 1. main.go should be generate from go generate too.
 2. Status should remove.
+3. app.yml is not correct
 
 known bugs:
 1. not support NULL in json, (JSON-to-GO) will convert it to interface{}
