@@ -3,10 +3,10 @@ package main
 
 // @ginger
 type GithubUser struct {
-	Created           int32  `json:"created,omitempty"`
-	Id                int32  `json:"id,omitempty"`
+	Ginger_Created    int32  `json:"ginger_created"`
+	Ginger_Id         int32  `json:"ginger_id" gorm:"primary_key"`
 	Login             string `json:"login"`
-	ID2               int    `json:"id2"`
+	ID                int    `json:"id"`
 	AvatarURL         string `json:"avatar_url"`
 	GravatarID        string `json:"gravatar_id"`
 	URL               string `json:"url"`
