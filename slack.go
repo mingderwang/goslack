@@ -1,5 +1,5 @@
 //go:generate ginger $GOFILE
-package service
+package main
 
 type SlackTopic struct {
 	Value   string `json:"value"`

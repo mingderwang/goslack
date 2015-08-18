@@ -14,9 +14,9 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-func getConfig(c *cli.Context) (service.Config, error) {
+func getConfig(c *cli.Context) (Config, error) {
 	yamlPath := c.GlobalString("config")
-	config := service.Config{}
+	config := Config{}
 
 	if _, err := os.Stat(yamlPath); err != nil {
 		return config, errors.New("config path not valid")
@@ -45,7 +45,7 @@ func init() {
 func main() {
 	app := cli.NewApp()
 	app.Name = "goslack"
-	app.Usage = "start a micro service"
+	app.Usage = "micro service main"
 	app.Version = "0.0.3"
 
 	app.Flags = []cli.Flag{
@@ -68,7 +68,7 @@ func main() {
 					}).Fatal("getConfig return error")
 					return
 				}
-				svc := service.Slack_messageService{}
+				svc := mainService{}
 
 				if err = svc.Run(cfg); err != nil {
 					log.Fatal(err)
@@ -86,7 +86,7 @@ func main() {
 					return
 				}
 
-				svc := service.Slack_messageService{}
+				svc := mainService{}
 
 				if err = svc.Migrate(cfg); err != nil {
 					log.Fatal(err)
