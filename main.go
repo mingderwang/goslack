@@ -11,7 +11,6 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 	"github.com/codegangsta/cli"
-	"github.com/mingderwang/goslack/service"
 	"gopkg.in/yaml.v2"
 )
 
