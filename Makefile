@@ -1,7 +1,6 @@
 .PHONY: all clean
 
 all: dataSchema.go 
-	go generate; go build
 
 clean:
 	@go clean
