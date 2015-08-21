@@ -1,18 +1,20 @@
+//go:generate ginger $GOFILE
 package main
 
+//@ginger
 type SlackUser struct {
-	Ginger_Created    int32       `json:"ginger_created"`
-	Ginger_Id         int32       `json:"ginger_id" gorm:"primary_key"`
-	ID                string      `json:"id"`
-	Name              string      `json:"name"`
-	Deleted           bool        `json:"deleted"`
-	Status            string      `json:"status"`
-	Color             string      `json:"color"`
-	RealName          string      `json:"real_name"`
-	Tz                string      `json:"tz"`
-	TzLabel           string      `json:"tz_label"`
-	TzOffset          int         `json:"tz_offset"`
-	Profile           ProfileType `json:"profile"`
+	Ginger_Created int32  `json:"ginger_created"`
+	Ginger_Id      int32  `json:"ginger_id" gorm:"primary_key"`
+	ID             string `json:"id"`
+	Name           string `json:"name"`
+	Deleted        bool   `json:"deleted"`
+	Status         string `json:"status"`
+	Color          string `json:"color"`
+	RealName       string `json:"real_name"`
+	Tz             string `json:"tz"`
+	TzLabel        string `json:"tz_label"`
+	TzOffset       int    `json:"tz_offset"`
+	//	Profile           ProfileType `json:"profile"`
 	ProfileId         int64
 	IsAdmin           bool `json:"is_admin"`
 	IsOwner           bool `json:"is_owner"`
