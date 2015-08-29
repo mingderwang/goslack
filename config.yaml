@@ -1,5 +1,0 @@
-svchost: :8091
-dbuser: root
-dbpassword: ""
-dbhost: localhost
-dbname: SlackUser
