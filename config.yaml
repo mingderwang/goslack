@@ -1,0 +1,7 @@
+
+svchost: :8080
+dbuser: root
+dbpassword: ""
+dbhost: localhost
+dbname: SlackUser.db
+
